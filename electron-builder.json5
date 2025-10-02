@@ -1,7 +1,7 @@
 // @see - https://www.electron.build/configuration/configuration
 {
   "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  "appId": "YourAppID",
+  "appId": "com.Signalix.dev",
   "asar": true,
   "productName": "Signalix",
   "directories": {
@@ -15,6 +15,7 @@
     "target": [
       "dmg"
     ],
+    "icon": "public/icons/apple-touch-icon.png",
     "artifactName": "${productName}-Mac-${version}-Installer.${ext}"
   },
   "win": {
@@ -26,6 +27,7 @@
         ]
       }
     ],
+     "icon": "public/icons/rounded-logo.png",
     "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
   },
   "nsis": {
@@ -39,5 +41,9 @@
       "AppImage"
     ],
     "artifactName": "${productName}-Linux-${version}.${ext}"
-  }
+  },
+   "publish": {
+    "provider": "github",
+    "owner": "ashley-chiteri",
+    "repo": "signalix-miner" 
 }

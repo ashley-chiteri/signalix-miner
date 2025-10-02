@@ -1,20 +1,28 @@
 {
   "name": "signalix-miner",
   "private": true,
+  "description": "A desktop application for managing and monitoring Signalix miners.",
+  "author": "Signalix Inc",
+  "license": "MIT",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "npm run build && electron-builder --publish always",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
     "@jlongster/sql.js": "^1.6.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "electron-log": "^5.4.3",
+    "electron-updater": "^6.6.2",
     "lucide-react": "^0.544.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
